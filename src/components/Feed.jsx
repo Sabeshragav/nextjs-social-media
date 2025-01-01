@@ -51,6 +51,17 @@ export default function Feed() {
     setSearchText(tag);
   };
 
+  // fallback
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  });
+
+  if (!isLoaded) {
+    return <div className="flex items-center justify-center">Loading ...</div>;
+  }
+
   return (
     <section className="feed">
       <form className="relative w-full flex-center">

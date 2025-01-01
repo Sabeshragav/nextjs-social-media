@@ -60,6 +60,18 @@ export default function ProfilePage() {
       setDeleteId("");
     }
   };
+
+  // fallback
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  });
+
+  if (!isLoaded) {
+    return <div className="flex items-center justify-center">Loading ...</div>;
+  }
+
   return (
     <Profile
       name={userId ? `${posts?.[0]?.creator.username}'s` : "My"}

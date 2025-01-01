@@ -23,6 +23,17 @@ export default function Nav() {
     funcSetProviders();
   }, []);
 
+  // fallback
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  });
+
+  if (!isLoaded) {
+    return <div className="flex items-center justify-center">Loading ...</div>;
+  }
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href={"/"} className="flex flex-center gap-2">
