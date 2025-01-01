@@ -5,6 +5,7 @@ import { useEffect } from "react";
 export default function Error({ error, reset }) {
   useEffect(() => {
     console.error("An error occurred:", error);
+    alert(error);
   }, [error]);
 
   return (
