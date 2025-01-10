@@ -24,12 +24,12 @@ export default function Form({
       >
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            Your Title
+            Your Content
           </span>
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
-            placeholder="Write your prompt here..."
+            placeholder="Write your content here..."
             required
             className="form_textarea"
           ></textarea>
